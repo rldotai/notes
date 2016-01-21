@@ -1,0 +1,108 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}                    % Math package
+\usepackage{amsfonts}                   % Math fonts
+\usepackage{amssymb}                    % Math symbols
+\usepackage{amsthm}                     % Theorem environments
+\usepackage{booktabs}                   % For table environments
+\usepackage[usenames,dvipsnames]{color}                 % Required for custom colors
+\usepackage{courier}                    % Required for the courier font
+\usepackage{enumerate}                  % Better enumerate
+\usepackage{graphicx}                   % Required to insert images
+\usepackage{listings}                   % Required for insertion of code
+\usepackage{mathtools}                  % For fancier delimiters
+\usepackage{mdframed}                                   % For better boxing of content
+\usepackage{scalerel}                   % For scaling individual objects
+\usepackage{tikz}                       % For drawing graphs
+\usepackage{titlesec}                   % Modifying section fonts
+\usepackage{verbatim}                   % For things that have to be verbatim
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\titleformat*{\section}{\normalfont\large\bfseries}
+\titleformat*{\subsection}{\normalfont\normalsize\bfseries}
+
+% Number equations by section
+\numberwithin{equation}{section}
+
+% Theorem Environments
+\theoremstyle{theorem}
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}{Definition}
+
+\theoremstyle{remark}
+\newtheorem{claim}{Claim}
+
+% Box Environments
+\mdfdefinestyle{theoremstyle}{%
+  frametitlerule=true,%
+  innertopmargin=\topskip,
+}
+\mdtheorem[style=theoremstyle]{algobox}{Algorithm}
+
+% Tikz Environments
+\usetikzlibrary{arrows,automata,positioning}
+\tikzstyle{state} = [circle, text centered, draw=black, fill=white]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+% No indenting on paragraphs
+\setlength\parindent{0pt}
+
+% nicer absolute value symbols
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+
+\newcommand{\argmin}{\mathop{\mathrm{argmin}}}
+\newcommand{\argmax}{\mathop{\mathrm{argmax}}}
+\newcommand{\BigO}[1]{\mathcal{O}\left( #1 \right)}
+\renewcommand{\exp}[1]{\mathop{\mathrm{exp}}\left\{#1 \right\}}
+\newcommand{\Ln}[1]{\mathop{ln}\left( #1 \right)}
+\newcommand{\Log}[1]{\mathop{log}\left( #1 \right)}
+
+\newcommand{\Exp}[1]{\mathbb{E}\left[ #1 \right]}
+\newcommand{\Var}[1]{\mathrm{Var}\left[ #1 \right]}
+\newcommand{\Cov}[1]{\mathrm{Cov}\left[ #1 \right]}
+\renewcommand\Pr[1]{{\mathbb{P}}\left(#1\right)}
+
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\newcommand{\Sgn}[1]{\mathop{\mathrm{sgn}}\left[#1\right]}
+
+% set macro
+\newcommand{\set}[1]{\left\{ #1 \right\}}
+
+% prettier vectors
+\newcommand{\vect}[1]{\vec{x}}
+\renewcommand\vec[1]{{\mathbf #1}}
+
+% prettier empty set
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+
+% Calligraphic text
+\newcommand{\CA}{\mathcal{A}}
+\newcommand{\CE}{\mathcal{E}}
+\newcommand{\CG}{\mathcal{G}}
+\newcommand{\CH}{\mathcal{H}}
+\newcommand{\CL}{\mathcal{L}}
+\newcommand{\CM}{\mathcal{M}}
+\newcommand{\CN}{\mathcal{N}}
+\newcommand{\CO}{\mathcal{O}}
+\newcommand{\CP}{\mathcal{P}}
+\newcommand{\CR}{\mathcal{R}}
+\newcommand{\CS}{\mathcal{S}}
+
+% Blackboard font
+\newcommand{\BE}{\mathbb{E}}
+\newcommand{\BI}{\mathbb{I}}
+\newcommand{\BP}{\mathbb{P}}
+\newcommand{\BR}{\mathbb{R}}
+
+% Specific, commonly used symbols
+\newcommand{\vxbar}{\bar{\vec{x}}}
